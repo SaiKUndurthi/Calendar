@@ -1,0 +1,72 @@
+<section>
+<select ng-model="rowModel.month" ng-change="rowModel.dayTonull()">
+ 			<option value="January">January</option>
+ 			<option value="February">February</option>
+ 			<option value="March">March</option>
+ 			<option value="April">April</option>
+ 			<option value="May">May</option>
+ 			<option value="June">June</option>
+ 			<option value="July">July</option>
+ 			<option value="August">August</option>
+ 			<option value="September">September</option>
+ 			<option value="October">October</option>
+ 			<option value="November">November</option>
+ 			<option value="December">December</option>
+</select>
+<select  ng-model="rowModel.year" ng-change="rowModel.dayTonull()">
+ 			<option ng-repeat="year in rowModel.yearRange" value="{{year}}">{{year}}</option>
+</select>
+
+				<div class="row">
+				   <div class="days col">
+				      Sunday
+				    </div>
+				    <div class="days col">
+				      Monday
+				    </div>
+				    <div class="col days">
+				      Tuesday
+				    </div>
+				    <div class="col days">
+				      Wednesday
+				    </div>
+				    <div class="col days">
+				      Thursday
+				    </div>
+				    <div class="col days">
+				      Friday
+				    </div>
+				    <div class="col days">
+				      Saturday
+				    </div>
+				</div>
+
+<div class="row" ng-repeat="range in rowModel.ranges[rowModel.calendarData[0][rowModel.month]]" >
+			    <span class="border"><div class="col" ng-class="rowModel.alert[range[0]] ? 'col highlight':'col'"  ng-click="rowModel.handleClick(range[0])">
+			      {{range[0]}}
+			    </div></span>
+			    <span class="border"><div class="col" ng-class="rowModel.alert[range[1]] ? 'col highlight':'col'"  ng-click="rowModel.handleClick(range[1])">
+			      {{range[1]}}
+			    </div></span>
+			    <span class="border"><div class="col" ng-class="rowModel.alert[range[2]] ? 'col highlight':'col'"  ng-click="rowModel.handleClick(range[2])">
+			      {{range[2]}}
+			    </div></span>
+			    <span class="border"><div class="col" ng-class="rowModel.alert[range[3]] ? 'col highlight':'col'"  ng-click="rowModel.handleClick(range[3])">
+			      {{range[3]}}
+			    </div></span>
+			    <span class="border"><div class="col" ng-class="rowModel.alert[range[4]] ? 'col highlight':'col'"  ng-click="rowModel.handleClick(range[4])">
+			      {{range[4]}}
+			    </div></span>
+			    <span class="border"><div class="col" ng-class="rowModel.alert[range[5]] ? 'col highlight':'col'"  ng-click="rowModel.handleClick(range[5])">
+			      {{range[5]}}
+			    </div></span>
+			    <span class="border"><div class="col" ng-class="rowModel.alert[range[6]] ? 'col highlight':'col'"  ng-click="rowModel.handleClick(range[6])">
+			      {{range[6]}}
+			    </div></span>
+			</div>
+		</div>
+		 	<p></p>
+ 			<p></p>
+ 			<p></p>
+ 			<event-calendar day="rowModel.day" month="rowModel.month" year="rowModel.year"></event-calendar>
+</section>

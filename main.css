@@ -1,0 +1,70 @@
+html{
+    background-color: #fff;
+    color: #555;
+    font-family: "Lato", "Arial", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+.row{
+	width: 750px;
+	padding-left: 15px;
+}
+
+.col{
+	width: 94px;
+	height: 75px;
+	cursor: pointer;
+}
+
+.inp{
+	display: inline-block;
+	border-radius: 10px;
+	width: 25%;
+	text-align: center;
+}
+
+.input-group-prepend{
+	display: inline-block;
+	margin-left: 40px;
+	margin-right: 10px;
+}
+
+.days{
+  padding: 0px;
+  margin-left: 0px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 36px;
+  float: left;
+  text-align: left;
+}
+
+.highlight{
+	background-color: #ebc8aa;
+}
+.agenda {  }
+
+/* Dates */
+.agenda .agenda-date { width: 170px; }
+.agenda .agenda-date .dayofmonth {
+  width: 40px;
+  font-size: 36px;
+  line-height: 36px;
+  float: left;
+  text-align: right;
+  margin-right: 10px; 
+}
+.agenda .agenda-date .shortdate {
+  font-size: 0.75em; 
+}
+
+
+/* Times */
+.agenda .agenda-time { width: 140px; } 
+
+
+/* Events */
+.agenda .agenda-events {  } 
+.agenda .agenda-events .agenda-event {  } 

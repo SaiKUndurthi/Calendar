@@ -1,0 +1,46 @@
+<section class="agenda">
+<table class="table table-condensed table-bordered">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="event in eventModel.events">
+        <!-- Single event in a single day -->
+        <tr>
+            <td class="agenda-date" class="active" rowspan="1">
+                <div class="dayofmonth">{{event.day}}</div>
+                <div class="dayofweek">{{event.month}}</div>
+                <div class="shortdate text-muted">{{event.year}}</div>
+            </td>
+            <td class="agenda-events">
+                <div class="agenda-event">
+                    <i class="glyphicon glyphicon-repeat text-muted" title="Repeating event"></i> 
+                    {{event.desc}}                
+                    <div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" ng-click="eventModel.removeEvent(event.month+event.day+event.year,event.day)">Delete</button>
+					</div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+ 		<hr />
+
+    <form class="alert alert-warning" ng-submit="eventModel.addEvent(eventModel.month,eventModel.day,eventModel.year,eventModel.desc)">
+    	<div class="form-group">
+	    	<label for="exampleFormControlInput1">Date</label>
+	    	<div>
+	    		<input class="input-group inp" type="text" value="{{eventModel.month}}">
+				<input required class="input-group inp" value="{{eventModel.day}}">
+				<input class="input-group inp" type="text" value="{{eventModel.year}}">
+			</div>
+  		</div>
+		<div class="form-group">
+		    <label for="exampleFormControlTextarea1">Description</label>
+		    <textarea required class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="eventModel.desc"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary mb-2">Add</button>
+	</form>
+</section>
